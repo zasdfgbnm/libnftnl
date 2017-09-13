@@ -132,7 +132,7 @@ static int nftnl_expr_abcde_export(char *buf, size_t size,
 	NFTNL_BUF_INIT(b, buf, size);
 
 	if (e->flags & (1 << NFTNL_EXPR_ABCDE_TEXT))
-		nftnl_buf_str(&b, type, abcde->text, TEXT);
+		nftnl_buf_str(&b, type, abcde->text, "text");
 
 	return nftnl_buf_done(&b);
 }
