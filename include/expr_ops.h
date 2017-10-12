@@ -27,4 +27,12 @@ struct expr_ops *nftnl_expr_ops_lookup(const char *name);
 
 #define nftnl_expr_data(ops) (void *)ops->data
 
+struct plugin {
+	void *handle;
+	struct expr_ops **expr_ops;
+};
+
+void *nftnl_load_plugin(const char *name);
+int nftnl_unload_plugin(void *handle);
+
 #endif
